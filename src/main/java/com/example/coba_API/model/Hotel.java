@@ -37,7 +37,7 @@ public class Hotel {
 	private String tempat;
 	
 	@NotBlank
-	private String nama_hotel;
+	private String namaHotel;
 	
 	@NotBlank
 	private String lokasi;
@@ -81,11 +81,12 @@ public class Hotel {
 	public void setTempat(String tempat) {
 		this.tempat = tempat;
 	}
-	public String getNama_hotel() {
-		return nama_hotel;
+
+	public String getNamaHotel() {
+		return namaHotel;
 	}
-	public void setNama_hotel(String nama_hotel) {
-		this.nama_hotel = nama_hotel;
+	public void setNamaHotel(String nama_hotel) {
+		this.namaHotel = nama_hotel;
 	}
 	public String getLokasi() {
 		return lokasi;

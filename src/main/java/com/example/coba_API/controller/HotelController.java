@@ -78,11 +78,11 @@ public class HotelController {
 	return ResponseEntity.ok().body(hotel);
 	}
 
-//	@GetMapping("/sortHotel")
-//	public List<Hotel> sortHotel(@RequestParam(value="title")String titleBook){
-//	return hotelrepo.findByTitleBook(titleBook);
-//	}
-//
+	@GetMapping("/sortHotel")
+	public List<Hotel> sortHotel(@RequestParam(value="nama")String nama_hotel){
+	return hotelrepo.findByNamaHotel(nama_hotel);
+	}
+
 //	@GetMapping("/sortstatus/{statusPeminjaman}")
 //	public List<Hotel> sortstatus(@PathVariable(value="statusPeminjaman") int statusPeminjaman){
 //	return hotelrepo.findByStatusPeminjaman(statusPeminjaman);
