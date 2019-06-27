@@ -1,11 +1,16 @@
-# Project Title
+# Build RESTful API with Spring Boot Framework
 
-One Paragraph of project description goes here
+Build API with GET,POST,PUT,DELETE, and SORT method for mobile applications.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+I'm using intellij idea for IDE, 
+Spring tools suits 4-4.3.0, 
+JDK 1.8, 
+Maven 3.6.1,
+XAMPP.
 ### Prerequisites
 
 What things you need to install the software and how to install them
