@@ -7,10 +7,15 @@ Build API with GET,POST,PUT,DELETE, and SORT method for mobile applications.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 I'm using intellij idea for IDE, 
-Spring tools suits 4-4.3.0, 
-JDK 1.8, 
-Maven 3.6.1,
-XAMPP.
+* Spring tools suits 4-4.3.0, 
+* JDK 1.8, 
+* Maven 3.6.1,
+* XAMPP.
+
+Dependencies :
+* Devtools
+* JPA
+* MySQL
 ### Prerequisites
 
 What things you need to install the software and how to install them
@@ -63,9 +68,11 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* 
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Spring tools suit](https://spring.io/tools) -  a web framework used
+* [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) -  a development environment for building applications, applets, and components using the Java programming language.
+* [XAMPP](https://www.apachefriends.org/index.html) - an easy to install Apache distribution containing MariaDB, PHP and Perl. 
 
 ## Contributing
 
