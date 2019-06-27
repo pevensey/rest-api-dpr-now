@@ -45,15 +45,15 @@ public class HotelController {
 //	@PutMapping("/{id}")
 //	public ResponseEntity<Hotel> updateHotel(@PathVariable(value="id")Long id,
 //	@Valid @RequestBody Hotel detailHotel){
-//	Hotel Hotel = hotelrepo.findOne(id);
+//	Hotel hotel = hotelrepo.findOne(id);
 //	if(Hotel == null)
 //	return ResponseEntity.notFound().build();
-//	Hotel.setTitleBook(detailHotel.getTitleBook());
-//	Hotel.setNamaDepanPengarang(detailHotel.getNamaDepanPengarang());
-//	Hotel.setNamaBelakangPengarang(detailHotel.getNamaBelakangPengarang());
-//	Hotel.setNamaPeminjam(detailHotel.getNamaPeminjam());
-//	Hotel.setStatusPeminjaman(detailHotel.getStatusPeminjaman());
-//	Hotel updatedHotel = hotelrepo.save(Hotel);
+//	hotel.setTitleBook(detailHotel.getTitleBook());
+//	hotel.setNamaDepanPengarang(detailHotel.getNamaDepanPengarang());
+//	hotel.setNamaBelakangPengarang(detailHotel.getNamaBelakangPengarang());
+//	hotel.setNamaPeminjam(detailHotel.getNamaPeminjam());
+//	hotel.setStatusPeminjaman(detailHotel.getStatusPeminjaman());
+//	hotel updatedHotel = hotelrepo.save(Hotel);
 //	return ResponseEntity.ok(updatedHotel);
 //	}
 

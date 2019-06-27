@@ -1,6 +1,7 @@
 package com.example.coba_API.model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Hotel {
 
 	@Id
-	//@GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+	@GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
 	private Long id_hotel;
 	
 	@NotBlank
@@ -53,14 +54,15 @@ public class Hotel {
 	@NotBlank
 	private String maps;
 	
-//	@Column(nullable = false, updatable = false)
-//	@Temporal (TemporalType.TIMESTAMP)
-//	@CreatedDate
-//	private Date createdAt;
-//	@Column(nullable = false)
-//	@Temporal(TemporalType.TIMESTAMP)
+	@Column(nullable = false, updatable = false)
+	//@Temporal (TemporalType.TIMESTAMP)
+	@CreatedDate
+	private java.util.Date createdAt;
+	@Column(nullable = false)
+	//@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
-	private Date updatedAt;
+	private java.util.Date updatedAt;
+
 	public Long getId_hotel() {
 		return id_hotel;
 	}
@@ -115,17 +117,18 @@ public class Hotel {
 	public void setMaps(String maps) {
 		this.maps = maps;
 	}
-//	public Date getCreatedAt() {
-//		return createdAt;
-//	}
-//	public void setCreatedAt(Date createdAt) {
-//		this.createdAt = createdAt;
-//	}
-//	public Date getUpdatedAt() {
-//		return updatedAt;
-//	}
-//	public void setUpdatedAt(Date updatedAt) {
-//		this.updatedAt = updatedAt;
-//	}
+
+	public java.util.Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(java.util.Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public java.util.Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(java.util.Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 	
 }
