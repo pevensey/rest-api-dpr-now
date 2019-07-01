@@ -51,12 +51,44 @@ Explain how to run the automated tests for this system
 Explain what these tests test and why
 
 ```
-Give an example
+Parameter
 ```
 
-### And coding style tests
+### `/hotel`
 
-Explain what these tests test and why
+Returns all information about all episodes. This returns an array of Episode
+objects as defined above.
+
+### `/newest`
+
+Returns the episode of My Little Pony: Friendship is Magic that will air next.
+
+### `/last_aired`
+
+Returns the episode of My Little Pony: Friendship is Magic that most recently
+aired.
+
+### `/season/<number>`
+
+Returns all information about episodes in the given season number or a `404`
+reply if no episodes could be found. To get all information about the movies
+shown, set the season as `99`.
+
+### `/season/<number>/episode/<number>`
+
+Returns all information about the episode with the given season and episode
+number. If the episode cannot be found, this will return a `404`.
+
+### `/random`
+
+Returns a random episode record from the list of episodes.
+
+### `/search`
+
+This must be given a query paramater `q` containing the text to search for. Not
+including this will return a `406` reply. This will search the list of episode
+records for any episodes whose names match the given search terms. This is
+case-insensitive. If no episodes can be found, this will return a `404` reply.
 
 ```
 Give an example
