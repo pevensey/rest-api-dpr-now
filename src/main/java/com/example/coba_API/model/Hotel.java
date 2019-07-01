@@ -13,6 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -37,6 +38,7 @@ public class Hotel {
 	private String tempat;
 	
 	@NotBlank
+	//@NotEmpty(message="{NotEmpty}")
 	private String namaHotel;
 	
 	@NotBlank

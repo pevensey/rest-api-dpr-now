@@ -42,20 +42,22 @@ public class HotelController {
 	return hotelrepo.save(Hotel);
 	}
 
-//	@PutMapping("/{id}")
-//	public ResponseEntity<Hotel> updateHotel(@PathVariable(value="id")Long id,
-//	@Valid @RequestBody Hotel detailHotel){
-//	Hotel hotel = hotelrepo.findOne(id);
-//	if(Hotel == null)
-//	return ResponseEntity.notFound().build();
-//	hotel.setTitleBook(detailHotel.getTitleBook());
-//	hotel.setNamaDepanPengarang(detailHotel.getNamaDepanPengarang());
-//	hotel.setNamaBelakangPengarang(detailHotel.getNamaBelakangPengarang());
-//	hotel.setNamaPeminjam(detailHotel.getNamaPeminjam());
-//	hotel.setStatusPeminjaman(detailHotel.getStatusPeminjaman());
-//	hotel updatedHotel = hotelrepo.save(Hotel);
-//	return ResponseEntity.ok(updatedHotel);
-//	}
+	@PutMapping("/{id}")
+	public ResponseEntity<Hotel> updateHotel(@PathVariable(value="id")Long id,
+	@Valid @RequestBody Hotel detailHotel){
+	Hotel hotel = hotelrepo.findOne(id);
+	if(hotel == null)
+	return ResponseEntity.notFound().build();
+	hotel.setId_daerah(detailHotel.getId_daerah());
+	hotel.setTempat(detailHotel.getTempat());
+	hotel.setLokasi(detailHotel.getLokasi());
+	hotel.setHarga(detailHotel.getHarga());
+	hotel.setDeskripsi(detailHotel.getDeskripsi());
+	hotel.setGambar(detailHotel.getGambar());
+	hotel.setMaps(detailHotel.getMaps());
+	Hotel updatedHotel = hotelrepo.save(detailHotel);
+	return ResponseEntity.ok(updatedHotel);
+	}
 
 	@DeleteMapping("/{id}")
 	public String deleteHotel(@PathVariable (value="id") Long id){
