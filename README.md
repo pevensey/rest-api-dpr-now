@@ -48,7 +48,7 @@ Explain how to run the automated tests for this system
 
 ### Parameter
 
-### `/hotel`
+### `/pengaduan`
 
 Returns all information about all episodes. This returns an array of Episode
 objects as defined above.
