@@ -1,0 +1,5 @@
+name: api-dpr-now
+path: target\coba_API-0.0.1-SNAPSHOT.war
+memory: 1G
+services:
+  - "mysqldb"
