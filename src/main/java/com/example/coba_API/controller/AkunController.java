@@ -27,7 +27,21 @@ public class AkunController {
     public List<Akun> getAll(){
         return akunrepo.findAll();
     }
+    @PostMapping("/tambahakun")
+    public Akun tambahAkun(@Valid @RequestBody Akun akun) {
+        return akunrepo.save(akun);
+    }
 
+
+    @PostMapping("/tambah")
+    public Akun tambahManual() {
+
+        Akun akun = new Akun();
+        akun.setemail("cobacoba.com");
+        akun.setPassword("123456");
+
+        return akunrepo.save(akun);
+    }
 //    @PostMapping("/")
 //    public Akun login(@Valid @RequestBody Akun akun) {
 //        return akunrepo.save(akun);

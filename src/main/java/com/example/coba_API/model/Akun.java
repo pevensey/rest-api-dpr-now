@@ -18,7 +18,6 @@ public class Akun {
     @NotBlank
     private String email;
 
-
     @NotBlank
     private String password;
 
