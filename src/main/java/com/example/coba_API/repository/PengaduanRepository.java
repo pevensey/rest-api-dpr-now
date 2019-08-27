@@ -9,13 +9,13 @@ import java.util.List;
 
 @Repository
 public interface PengaduanRepository extends JpaRepository<Pengaduan, Long> {
-	
-//	List<Pengaduan> findByStatusPeminjaman (int statusPeminjaman);
-	//List<Pengaduan> findBynamaHotel(String nama_hotel);
-//List<Pengaduan> findByNamaHotel(String nama_hotel);
-	//List<Pengaduan> findByName(String nama_hotel);
-	//List<Pengaduan> findAll();
-	//List<Pengaduan> findAll(String titleBook);
-//	@Query("SELECT id_hotel FROM hotel")
-//	List<Pengaduan> findAll();
+
+    //List<Pengaduan> findByStatusPeminjaman (int statusPeminjaman);
+    //List<Pengaduan> findBynamaHotel(String nama_hotel);
+    //List<Pengaduan> findByNamaHotel(String nama_hotel);
+    //List<Pengaduan> findByName(String nama_hotel);
+    //List<Pengaduan> findAll();
+    //List<Pengaduan> findAll(String titleBook);
+    //	@Query("SELECT id_hotel FROM hotel")
+    //	List<Pengaduan> findAll();
 }

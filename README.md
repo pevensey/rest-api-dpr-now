@@ -1,4 +1,5 @@
 # Build RESTful API with Spring Boot Framework
+[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/pevensey/spring-boot-api.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/pevensey/spring-boot-api/context:java)
 
 Build API with GET,POST,PUT,DELETE, and SORT method for mobile applications.
 

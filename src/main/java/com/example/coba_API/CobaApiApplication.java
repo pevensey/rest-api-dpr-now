@@ -1,7 +1,9 @@
 package com.example.coba_API;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,13 +11,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.example.coba_API.controller.PengaduanController;
 
-@SpringBootApplication(scanBasePackages={
-		"com.example.coba_API.service","com.example.coba_API.property"})
+@SpringBootApplication(exclude = {ErrorMvcAutoConfiguration.class}) //disable white label error page
 @EnableJpaAuditing
 //@EnableConfigurationProperties({
 //		FileStorageProperties.class
 //})
-@ComponentScan(basePackageClasses= PengaduanController.class)
+//@ComponentScan("com.example.coba_API")
+
 public class CobaApiApplication  extends SpringBootServletInitializer {
 
     @Override

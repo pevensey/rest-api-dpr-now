@@ -3,6 +3,7 @@ package com.example.coba_API.controller;
 import com.example.coba_API.model.Pengaduan;
 import com.example.coba_API.repository.PengaduanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -31,16 +32,16 @@ public class PengaduanController {
 
 	@PutMapping("/{id}")
 	public ResponseEntity<Pengaduan> updatePengaduan(@PathVariable(value="id")Long id,
-	@Valid @RequestBody Pengaduan detailPengaduan){
-	Pengaduan Pengaduan = pengaduanrepo.findOne(id);
-	if(Pengaduan == null)
+	@Valid @RequestBody Pengaduan detailpengaduan){
+	Pengaduan pengaduan = pengaduanrepo.findOne(id);
+	if(pengaduan == null)
 	return ResponseEntity.notFound().build();
-	Pengaduan.setid_pengaduan(detailPengaduan.getid_pengaduan());
-	Pengaduan.setemail(detailPengaduan.getemail());
-	Pengaduan.setnama(detailPengaduan.getnama());
-	Pengaduan.setisi_aduan(detailPengaduan.getisi_aduan());
-	Pengaduan.setno_telepon(detailPengaduan.getno_telepon());
-	Pengaduan updatedPengaduan = pengaduanrepo.save(detailPengaduan);
+	//pengaduan.setid_pengaduan(detailpengaduan);
+	pengaduan.setemail(detailpengaduan.getemail());
+	pengaduan.setnama(detailpengaduan.getnama());
+	pengaduan.setisi_aduan(detailpengaduan.getisi_aduan());
+	pengaduan.setno_telepon(detailpengaduan.getno_telepon());
+	Pengaduan updatedPengaduan = pengaduanrepo.save(detailpengaduan);
 	return ResponseEntity.ok(updatedPengaduan);
 	}
 
