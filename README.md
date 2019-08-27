@@ -1,6 +1,7 @@
 # Build RESTful API with Spring Boot Framework
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/pevensey/spring-boot-api.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/pevensey/spring-boot-api/context:java)
 [![fuzzit](https://app.fuzzit.dev/badge?org_id=yuliantopambudi)](https://app.fuzzit.dev/orgs/yuliantopambudi/dashboard)
+[![Travis CI](https://travis-ci.org/pevensey/spring-boot-api.svg?branch=master)](https://travis-ci.org/pevensey/spring-boot-api)
 
 Build API with GET,POST,PUT,DELETE, and SORT method for mobile applications.
 
