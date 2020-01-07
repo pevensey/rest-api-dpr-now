@@ -1,13 +1,13 @@
-# Build RESTful API with Spring Boot Framework
+# Build REST API with Spring Boot Framework
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/pevensey/spring-boot-api.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/pevensey/spring-boot-api/context:java)
 [![fuzzit](https://app.fuzzit.dev/badge?org_id=yuliantopambudi)](https://app.fuzzit.dev/orgs/yuliantopambudi/dashboard)
 [![Travis CI](https://travis-ci.org/pevensey/spring-boot-api.svg?branch=master)](https://travis-ci.org/pevensey/spring-boot-api)
 
-Build API with GET,POST,PUT,DELETE, and SORT method for mobile applications.
+## General Info
+I'm build this rest-api as backend system for android app called [template-dpr-now](https://github.com/aannisagita/Template_dpr_now). This backend system provide feature for 'pengaduan'
+and login to android app. This rest-api could perform GET, POST, PUT, DELETE, and SORT method.
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 I'm using intellij idea for IDE, 
 * Spring tools suits 4-4.3.0, 
@@ -20,17 +20,27 @@ Dependencies :
 * JPA
 * MySQL
 
-
 ### Parameter
+These parameter tested on Postman v5.5.4
 
 ### `GET /pengaduan`
 
-Returns all information about all pengaduan. 
+Returns all pengaduan. 
 
+### `POST/pengaduan`
+
+Send data to pengaduan, with field (nama, email, nomor-telepon, isi-aduan). 
+
+### `PUT /pengaduan`
+
+Return all pengaduan, then update with newest field (nama, email, nomor-telepon, isi-aduan).
+
+### `DELETE /pengaduan`
+
+Delete pengaduan with ID. 
 
 ## Built With
 
-* 
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring tools suit](https://spring.io/tools) -  a web framework used
 * [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) -  a development environment for building applications, applets, and components using the Java programming language.
