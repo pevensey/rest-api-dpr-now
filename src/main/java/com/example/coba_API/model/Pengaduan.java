@@ -71,7 +71,6 @@ public class Pengaduan {
 	public void setemail(String email) {
 		this.email = email;
 	}
-
 	public String getno_telepon() {
 		return no_telepon;
 	}
@@ -84,8 +83,6 @@ public class Pengaduan {
 	public void setisi_aduan(String isi_aduan) {
 		this.isi_aduan = isi_aduan;
 	}
-
-
 	public java.util.Date getCreatedAt() {
 		return createdAt;
 	}

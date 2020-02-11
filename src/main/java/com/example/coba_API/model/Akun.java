@@ -13,7 +13,6 @@ import javax.persistence.*;
 public class Akun {
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
-    private Long id_akun;
 
     @NotBlank
     private String email;
@@ -22,13 +21,6 @@ public class Akun {
     private String password;
 
     private boolean error;
-//    public Long getId_akun() {
-//        return id_akun;
-//    }
-
-    public void setId_akun(Long id_akun) {
-        this.id_akun = id_akun;
-    }
 
     public String getEmail() {
         return email;

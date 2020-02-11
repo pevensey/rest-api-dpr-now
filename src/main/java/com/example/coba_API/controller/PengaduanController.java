@@ -47,9 +47,9 @@ public class PengaduanController {
 
 	@DeleteMapping("/{id}")
 	public String deleteHotel(@PathVariable (value="id") Long id){
-	Pengaduan Pengaduan = pengaduanrepo.findOne(id);
+	Pengaduan pengaduan = pengaduanrepo.findOne(id);
 	String result = "";
-	if(Pengaduan == null) {
+	if(pengaduan == null) {
 	result = "id "+id+" tidak ditemukan";
 	return result;
 	}

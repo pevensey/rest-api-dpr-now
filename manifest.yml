@@ -1,4 +1,4 @@
-name: api-dpr-now #nama aplikasi yang akan dibuat di cloudfoundry
+name: api-template-dpr-now #nama aplikasi yang akan dibuat di cloudfoundry
 path: target\coba_API-0.0.1-SNAPSHOT.war #target snapshot  di folder coba_API
 memory: 1G
 services:
