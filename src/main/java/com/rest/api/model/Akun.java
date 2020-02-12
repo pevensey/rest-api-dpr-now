@@ -1,4 +1,4 @@
-package com.example.coba_API.model;
+package com.rest.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.NotBlank;
@@ -13,34 +13,37 @@ import javax.persistence.*;
 public class Akun {
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    private Long id_akun;
 
     @NotBlank
-    private String email;
+    private String username;
 
     @NotBlank
     private String password;
 
     private boolean error;
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setemail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
         return password;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public boolean isError() {
         return error;
     }
 
     public void setError(boolean error) {
         this.error = error;
-    }
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

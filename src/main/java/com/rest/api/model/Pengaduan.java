@@ -1,4 +1,4 @@
-package com.example.coba_API.model;
+package com.rest.api.model;
 
 import java.sql.Date;
 import java.time.LocalDateTime;

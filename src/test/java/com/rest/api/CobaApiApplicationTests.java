@@ -1,4 +1,4 @@
-package com.example.coba_API;
+package com.rest.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.example.coba_API.controller;
+package com.rest.api.controller;
 
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.http.HttpStatus;

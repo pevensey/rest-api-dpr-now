@@ -1,13 +1,12 @@
-package com.example.coba_API.repository;
+package com.rest.api.repository;
 
-import com.example.coba_API.model.Akun;
-import com.example.coba_API.model.Pengaduan;
+import com.rest.api.model.Akun;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
+@Repository
 public interface AkunRepository extends JpaRepository<Akun, Long> {
 
     @Query("SELECT password FROM Akun where password=pass")
@@ -16,6 +15,8 @@ public interface AkunRepository extends JpaRepository<Akun, Long> {
     @Query("SELECT t.password FROM Akun t where t.password = :password")
     String findKataSandi(@Param("password") String pass);
 
-    @Query("SELECT t.email FROM Akun t where t.email = :email")
-    String findEmail(@Param("email") String email);
+//    @Query("SELECT t.email FROM Akun t where t.email = :email")
+//    String findEmail(@Param("email") String email);
+
+    Akun findByUsername(String username);
 }

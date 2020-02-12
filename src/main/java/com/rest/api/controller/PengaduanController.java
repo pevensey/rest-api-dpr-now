@@ -1,9 +1,8 @@
-package com.example.coba_API.controller;
+package com.rest.api.controller;
 
-import com.example.coba_API.model.Pengaduan;
-import com.example.coba_API.repository.PengaduanRepository;
+import com.rest.api.model.Pengaduan;
+import com.rest.api.repository.PengaduanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
