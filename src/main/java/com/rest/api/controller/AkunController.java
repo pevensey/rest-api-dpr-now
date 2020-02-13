@@ -2,11 +2,14 @@ package com.rest.api.controller;
 
 import com.rest.api.model.Akun;
 import com.rest.api.repository.AkunRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.management.Query;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -14,7 +17,7 @@ import java.util.List;
 @RequestMapping("/akun")
 public class AkunController {
     @Autowired
-    private AkunRepository akunrepo;
+    private AkunRepository akunRepo;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
@@ -24,11 +27,11 @@ public class AkunController {
     }
     @GetMapping("/")
     public List<Akun> getAll(){
-        return akunrepo.findAll();
+        return akunRepo.findAll();
     }
     @PostMapping("/tambahakun")
     public Akun tambahAkun(@Valid @RequestBody Akun akun) {
-        return akunrepo.save(akun);
+        return akunRepo.save(akun);
     }
 
 
@@ -39,31 +42,41 @@ public class AkunController {
         akun.setUsername("cobacoba.com");
         akun.setPassword("123456");
 
-        return akunrepo.save(akun);
+        return akunRepo.save(akun);
     }
-    public AkunController(AkunRepository akunrepo,
+    public AkunController(AkunRepository akunRepo,
                           BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.akunrepo = akunrepo;
+        this.akunRepo = akunRepo;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     @PostMapping("/sign-up")
     public void signUp(@RequestBody Akun pengguna) {
-        pengguna.setPassword(bCryptPasswordEncoder.encode(pengguna.getPassword()));
-        akunrepo.save(pengguna);
+//        Query query=  session.createQuery("from Account where name=?");
+//
+//        Account user=(Account)query.setString(0,user.getName()).uniqueResult();
+//        if(pengguna.getUsername() == )
+        String username = pengguna.getUsername();
+        Akun akun = akunRepo.findByUsername(username);
+        if (akun!=null) {
+            System.out.println("sudah ada akun");
+        }else {
+            pengguna.setPassword(bCryptPasswordEncoder.encode(pengguna.getPassword()));
+            akunRepo.save(pengguna);
+        }
     }
 //    @PostMapping("/")
 //    public Akun login(@Valid @RequestBody Akun akun) {
-//        return akunrepo.save(akun);
+//        return akunRepo.save(akun);
 //    }
 
 
     //    }@PostMapping("/")
 //    @ResponseStatus(value = HttpStatus.OK)
 //    public  ResponseEntity<Akun>  cobalogin(String nm, String ps) {
-//        //return akunrepo.findByemail(nm);
+//        //return akunRepo.findByemail(nm);
 //
-//        List<Akun> a = akunrepo.findByemail(nm);
+//        List<Akun> a = akunRepo.findByemail(nm);
 //        if(a==null){
 //            System.out.println(ResponseEntity.ok().body(a));
 //            return ResponseEntity.notFound().build();
@@ -80,8 +93,8 @@ public class AkunController {
 //        String email = akun.getUsername();
 //        String pass = akun.getPassword();
 //
-//        String pass_benar = akunrepo.findKataSandi(pass);
-//        String email_benar = akunrepo.findEmail(email);
+//        String pass_benar = akunRepo.findKataSandi(pass);
+//        String email_benar = akunRepo.findEmail(email);
 //
 //        ResponseEntity<Akun> a = null;
 //

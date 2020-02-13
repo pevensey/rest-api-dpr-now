@@ -14,6 +14,8 @@ public interface AkunRepository extends JpaRepository<Akun, Long> {
 
     @Query("SELECT t.password FROM Akun t where t.password = :password")
     String findKataSandi(@Param("password") String pass);
+//    @Query("SELECT username from AKUN where username=username")
+
 
 //    @Query("SELECT t.email FROM Akun t where t.email = :email")
 //    String findEmail(@Param("email") String email);
