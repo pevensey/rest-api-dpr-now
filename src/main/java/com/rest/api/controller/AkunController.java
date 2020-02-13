@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/akun")
+@RequestMapping(path="/akun" )
 public class AkunController {
     @Autowired
     private AkunRepository akunRepo;
@@ -51,18 +51,16 @@ public class AkunController {
     }
 
     @PostMapping("/sign-up")
-    public void signUp(@RequestBody Akun pengguna) {
-//        Query query=  session.createQuery("from Account where name=?");
-//
-//        Account user=(Account)query.setString(0,user.getName()).uniqueResult();
-//        if(pengguna.getUsername() == )
+    public ResponseEntity<?>signUp(@RequestBody Akun pengguna) {
         String username = pengguna.getUsername();
         Akun akun = akunRepo.findByUsername(username);
         if (akun!=null) {
             System.out.println("sudah ada akun");
-        }else {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        } else {
             pengguna.setPassword(bCryptPasswordEncoder.encode(pengguna.getPassword()));
             akunRepo.save(pengguna);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
     }
 //    @PostMapping("/")
