@@ -29,18 +29,20 @@ public class PengaduanController {
 	return pengaduanrepo.save(pengaduan);
 	}
 
+	/* objek cariPengaduan akan mencari id di databases dari path id yang di submit.
+	* Jika null maka return notfound, jika ada maka ambil nilai detilPengaduan dari
+	* @RequestBody yang client submit Kemudian simpan nilai tersebut dengan id yang sama (update) */
 	@PutMapping("/{id}")
 	public ResponseEntity<Pengaduan> updatePengaduan(@PathVariable(value="id")Long id,
 	@Valid @RequestBody Pengaduan detailpengaduan){
-	Pengaduan pengaduan = pengaduanrepo.findById(id).orElse(null);
-	if(pengaduan == null)
+	Pengaduan cariPengaduan = pengaduanrepo.findById(id).orElse(null);
+	if(cariPengaduan == null)
 	return ResponseEntity.notFound().build();
-	//pengaduan.setid_pengaduan(detailpengaduan);
-	pengaduan.setid_pengaduan(detailpengaduan.setid_pengaduan(id));
-	pengaduan.setemail(detailpengaduan.getemail());
-	pengaduan.setnama(detailpengaduan.getnama());
-	pengaduan.setisi_aduan(detailpengaduan.getisi_aduan());
-	pengaduan.setno_telepon(detailpengaduan.getno_telepon());
+	detailpengaduan.setid_pengaduan(id);
+	detailpengaduan.getemail();
+	detailpengaduan.getnama();
+	detailpengaduan.getisi_aduan();
+	detailpengaduan.getno_telepon();
 	Pengaduan updatedPengaduan = pengaduanrepo.save(detailpengaduan);
 	return ResponseEntity.ok(updatedPengaduan);
 	}
