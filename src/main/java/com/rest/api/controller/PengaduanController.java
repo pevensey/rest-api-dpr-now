@@ -36,6 +36,7 @@ public class PengaduanController {
 	if(pengaduan == null)
 	return ResponseEntity.notFound().build();
 	//pengaduan.setid_pengaduan(detailpengaduan);
+	pengaduan.setid_pengaduan(detailpengaduan.setid_pengaduan(id));
 	pengaduan.setemail(detailpengaduan.getemail());
 	pengaduan.setnama(detailpengaduan.getnama());
 	pengaduan.setisi_aduan(detailpengaduan.getisi_aduan());
