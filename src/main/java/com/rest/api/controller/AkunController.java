@@ -41,16 +41,20 @@ public class AkunController {
     }
 
     @PostMapping("/sign-up")
-    public ResponseEntity<?>signUp(@RequestBody Akun pengguna) {
+    public String signUp(@RequestBody Akun pengguna) {
         String username = pengguna.getUsername();
         Akun akun = akunRepo.findByUsername(username);
+        String result = "";
         if (akun!=null) {
-            System.out.println("sudah ada akun");
-            return new ResponseEntity<>(HttpStatus.CONFLICT);
+            //return new ResponseEntity<>(HttpStatus.CONFLICT);
+            result = "akun sudah ada";
+            return result ;
         } else {
             pengguna.setPassword(bCryptPasswordEncoder.encode(pengguna.getPassword()));
             akunRepo.save(pengguna);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+            //return new ResponseEntity<>(HttpStatus.CREATED);
+            result = "akun berhasil dibuat";
+            return result ;
         }
     }
 }

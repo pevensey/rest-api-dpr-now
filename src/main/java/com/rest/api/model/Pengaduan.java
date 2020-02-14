@@ -3,16 +3,10 @@ package com.rest.api.model;
 import java.sql.Date;
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.CreatedDate;
@@ -28,27 +22,30 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class Pengaduan {
 
-	@Id
-	@GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    @Id
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
 	private Long id_pengaduan;
-	
-	@NotBlank
+    @Column
 	private String nama;
-
-	@NotBlank
+    @Column
 	private String email;
-	
-	@NotBlank
-	//@NotEmpty(message="{NotEmpty}")
+    @Column
 	private String no_telepon;
-	
-	@NotBlank
+    @Column
 	private String isi_aduan;
 
 	@Column(nullable = false, updatable = false)
 	@CreatedDate
 	@JsonFormat
 	private java.util.Date createdAt;
+
 	@Column(nullable = false)
 	@LastModifiedDate
 	private java.util.Date updatedAt;

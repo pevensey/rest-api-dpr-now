@@ -32,7 +32,7 @@ public class PengaduanController {
 	@PutMapping("/{id}")
 	public ResponseEntity<Pengaduan> updatePengaduan(@PathVariable(value="id")Long id,
 	@Valid @RequestBody Pengaduan detailpengaduan){
-	Pengaduan pengaduan = pengaduanrepo.findOne(id);
+	Pengaduan pengaduan = pengaduanrepo.findById(id).orElse(null);
 	if(pengaduan == null)
 	return ResponseEntity.notFound().build();
 	//pengaduan.setid_pengaduan(detailpengaduan);
@@ -46,20 +46,20 @@ public class PengaduanController {
 
 	@DeleteMapping("/{id}")
 	public String deleteHotel(@PathVariable (value="id") Long id){
-	Pengaduan pengaduan = pengaduanrepo.findOne(id);
+	Pengaduan pengaduan = pengaduanrepo.findById(id).orElse(null);
 	String result = "";
 	if(pengaduan == null) {
 	result = "id "+id+" tidak ditemukan";
 	return result;
 	}
 	result = "id "+id+" berhasil di hapus";
-	pengaduanrepo.delete(id);
+	pengaduanrepo.deleteById(id);
 	return result;
 	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Pengaduan> getHotelById(@PathVariable(value="id") Long id){
-	Pengaduan pengaduan = pengaduanrepo.findOne(id);
+	Pengaduan pengaduan = pengaduanrepo.findById(id).orElse(null);
 	if(pengaduan == null)
 	return ResponseEntity.notFound().build();
 	return ResponseEntity.ok().body(pengaduan);
